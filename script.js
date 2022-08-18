@@ -42,7 +42,7 @@ new kursor({
 })
 
 
-/* Image Hover */
+/* Image Hover Projects */
 
 let links = document.querySelectorAll('.menu-item');
 let linkImages = document.querySelectorAll('.hover-reveal__img');
