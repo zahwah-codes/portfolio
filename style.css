@@ -1,0 +1,700 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+:root {
+    --primary-color: #F4F4F4;
+    --secondary-color: black;
+    --arrow: invert(0%) sepia(43%) saturate(4741%) hue-rotate(123deg) brightness(105%) contrast(96%);
+}
+
+.dark-theme{
+    --primary-color: black;
+    --secondary-color: #F4F4F4;
+    --arrow: invert(100%) sepia(0%) saturate(7500%) hue-rotate(148deg) brightness(103%) contrast(108%);
+}
+
+body{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+html,body{
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none; 
+}
+
+@font-face {
+    font-family: 'PP Neue Montreal Book';
+    src: url(/fonts/PPNeueMontreal-Book.woff2);
+}
+
+nav {
+    font-family: 'PP Neue Montreal Book';
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+div {
+    display: block;
+}
+
+button {
+    border: none;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: 0 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+}
+
+svg {
+    width: 27px;
+    height: 20px;
+}
+
+/* Nav Bar */
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 10px 10px 10px;
+}
+
+
+.nav-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--secondary-color);
+}
+
+.nav-links{
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--secondary-color);
+}
+
+@media(max-width:700px) {
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 50px;
+        gap:0;
+        flex-direction: row;
+        justify-content: center;
+        background-color:var(--primary-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .nav-links {
+        margin: 16px 4px;
+        border: 1px solid var(--secondary-color);
+        background-color: var(--secondary-color);
+        border-radius: 40px;
+        padding: 5px 10px;
+
+    }
+    .nav-menu.active{
+        left: 0;
+    }
+    a{
+        color: var(--primary-color);
+    }
+
+}
+
+
+
+/* Main Section */
+
+.home{
+    width: 100%;
+    height: 105vh;
+}
+
+.line {
+    width: 96vw;
+    height: 27vh;
+    margin-right: 2vw;
+    margin-left: 2vw;
+}
+
+.w-clearfix:before, .w-clearfix:after {
+    content: " ";
+    display: table;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 2;
+    grid-row-end: 2;
+}
+
+.line.intro {
+    overflow: hidden;
+    height: 27vh;
+}
+
+.home-header{
+    font-family: 'PP Neue Montreal Book';
+    font-size: 4.5rem;
+}
+
+.first-name {
+    margin-top: 30px;
+}
+
+.last-name {
+    margin-top: -150px;
+}
+
+.dec-arrow {
+    display: flex;
+    float: left;
+    align-items: flex-end;
+    opacity: 1;
+}
+
+.block-s {
+    width: 26vw;
+    height: 60%;
+}
+
+.block-s.right-align{
+    margin-top: 60px;
+    display: flex;
+    float: right;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-right: 100px;
+}
+
+.arrow-down {
+    width: 30px;
+    margin-top: 18vh;
+    margin-left: 14vw;
+    transform: rotateZ(135deg);
+    animation: jumpInfinite 1.5s infinite;
+    filter: var(--arrow);
+}
+
+#arrow {
+    filter: var(--arrow);
+}
+
+@keyframes jumpInfinite {
+    0% {transform: translate(0px, 5px) }
+    50% {transform: translate(0px, 15px) }
+    100% {transform: translate(0px, 5px);  }
+  }
+
+.sub-header {
+    font-family: 'PP Neue Montreal Book';
+    margin-top: 120px;
+	align-self: center;
+	padding-bottom: 3rem;
+    display: block;
+}
+
+.sub-header:after{
+    content: "";
+    display: block;
+    height: 0.5em;
+    width: 25%;
+    margin-top: 10px;
+    border-top: 1px solid var(--secondary-color);
+    position: absolute;
+    height: 0;
+}
+
+.darkmode {
+    display: block;
+    margin-top: -20px;
+}
+
+.darkmode-toggle{
+    font-family: 'PP Neue Montreal Book';
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 40px;
+    color: var(--primary-color);
+    padding: 5px 10px 5px 10px;
+    font-size: 0.8rem;
+}
+
+
+@media(min-width:800px) {
+    .home-header {
+        font-size: 14rem;
+    }
+    .last-name {
+        margin-top: 0px;
+    }
+    .first-name {
+        margin-top: 0px;
+    }
+    .darkmode-toggle{
+        font-size: 1rem;
+    }
+}
+
+@media (min-width:500px) and (max-width:800px) {
+    .home-header {
+        font-size: 8rem;
+    }
+
+    .last-name {
+        margin-top: -150px;
+    }
+
+    .first-name {
+        margin-top: 30px;
+    }
+    .darkmode-toggle{
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Selected Work */
+
+.section-projects {
+    margin-left: 60px;
+    height: 60vh;
+}
+.section-projects-title {
+    font-family: 'PP Neue Montreal Book';
+    font-size: 2.5rem;
+    line-height: 90%;
+}
+
+.section-projects-title:after{
+    content: "";
+    display: block;
+    height: 0.5em;
+    width: 59%;
+    margin-top: 10px;
+    border-top: 1px solid #b0b0b0;
+    position: absolute;
+    height: 0;
+}
+
+.section-projects__list {
+    width: 60%;
+}
+
+.project-list-item {
+    position: relative;
+    width: 100%;
+    height: 0px;
+}
+
+.project-list-item__content {
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+.project-list-item__projectname {
+    font-family: 'PP Neue Montreal Book';
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.project-list-item__projectname h3 {
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    mix-blend-mode: difference;
+}
+
+
+.prroject-list-item__project-description{
+    font-family: 'PP Neue Montreal Book';
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 45%;
+    display: inline-block;
+    color: var(--secondary-color);
+} 
+
+.project-list-item_code-link {
+    font-family: 'PP Neue Montreal Book';
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 50px;
+    background-color: var(--primary-color);
+    display: inline-block;
+    text-align: right;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+.project-list-item_border {
+    position: absolute;
+    left: 0;
+    width: 59%;
+    height: 0;
+    margin-left: 60px;
+    border-top: 1px solid #b0b0b0;
+}
+
+.menu-item {
+    position: relative;
+    flex: 1;
+}
+
+.one {
+    background-image: url(/images/1.jpeg);
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    
+}
+
+.two {
+    background-image: url(/images/2.jpeg);
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.three {
+    background-image: url(/images/3.jpeg);
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.four {
+    background-image: url(/images/4.gif);
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.hover-reveal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 200px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(300px, -90px);
+    transition: 0.2s ease-out;
+}
+
+.hover-reveal__inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    will-change: transform;
+    overflow: hidden;
+}
+
+.hover-reveal__img {
+    background-size: cover;
+    background-position: 50%, 50%;
+    transform-origin: 50% 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    will-change: transform;
+    transform: scale(0.8, 0.8);
+    transition: 1.5s transformm;
+}
+
+.project-arrow {
+    width: 18px;
+}
+
+
+@media(min-width:800px) {
+    .section-projects-title {
+        font-size: 5rem;
+    }
+    .project-list-item__projectname {
+        font-size: 2rem;
+    }
+    .project-list-item_code-link {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+    .prroject-list-item__project-description{
+        font-size: 0.9rem;
+    }
+    .project-list-item {
+        width: 100%;
+        height: 140px;
+    }
+    .project-list-item_border {
+        width: 51%;
+    }
+    .section-projects-title:after{
+        width: 51%;
+    }
+    .project-arrow {
+        width: 27px;
+    }
+}
+
+@media (min-width:500px) and (max-width:800px) {
+    .section-projects-title {
+        font-size: 3.2rem;
+        line-height: 3rem;
+    }
+    .project-list-item__projectname {
+        font-size: 1.2rem;
+    }
+    .project-list-item_code-link {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+    .prroject-list-item__project-description{
+        font-size: 0.8rem;
+    }
+    .project-list-item {
+        width: 100%;
+        height: 200px;
+    }
+    .project-list-item_border {
+        width: 56%;
+    }
+    .section-projects-title:after {
+        width: 56%;
+    }
+        .project-arrow {
+        width: 27px;
+    }
+}
+
+/* About */
+
+.section-about{
+    width: 100%;
+    height: 80vh;
+}
+
+.container {
+    position: relative;
+    width: calc(100% - 80px);
+    margin: auto;
+}
+
+.section-about__content {
+    width: 100%;
+    margin-top: 30vh;
+}
+
+.section-about__content >* {
+    vertical-align: top;
+}
+
+.section-about__introduction {
+    position: relative;
+    float: right;
+}
+
+.tiny-word {
+    letter-spacing: 0;
+    color: #817674;
+}
+
+.section-about__introduction-title {
+    font-family: 'PP Neue Montreal Book';
+    font-size: 0.8rem;
+    font-weight: 300;
+    position: absolute;
+    right: 0;
+    top: -16px;
+}
+
+.paragraph {
+    font-family: 'PP Neue Montreal Book';
+    letter-spacing: 0;
+    text-transform: uppercase;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.line-container {
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+.section-about__socials {
+    display: block;
+    position: relative;
+    top: 50px;
+}
+
+.section-about__paragraph .line-container {
+    overflow: hidden;
+}
+
+.social-link {
+    color: var(--secondary-color);
+    font-size: 0.7rem;
+}
+
+.section-about__socials-link {
+    position: relative;
+    display: inline-block;
+    padding-right: 15px;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.section-about__socials-link-label {
+    font-family: 'PP Neue Montreal Book';
+    text-transform: uppercase;
+    position: relative;
+}
+
+
+.socials-arrow{
+    width: 10px;
+}
+
+@media(min-width:800px) {
+    .line-container {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+    .social-link {
+        font-size: 1.4rem;
+    }
+
+    .section-about__socials {
+        margin-left: 30px;
+    }
+
+    .socials-arrow{
+        width: 15px;
+    }
+    
+}
+
+@media (min-width:500px) and (max-width:800px) {
+    .line-container {
+        font-size: 1.3rem;
+    }
+    .section-about__socials {
+        display: block;
+        position: relative;
+        top: 100px;
+    }
+    .social-link {
+        font-size: 0.7rem;
+    }
+}
+
+
+/* Footer */
+
+.footer-home{
+    width: 100%;
+    height: 5vh;
+}
+
+.footer-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.clock-time {
+    font-family: 'PP Neue Montreal Book';
+    font-weight: 300;
+    font-size: 0.6rem;
+    padding-left: 20px;
+}
+
+.footer-text {
+    font-family: 'PP Neue Montreal Book';
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #6B7280;
+    font-size: 0.5rem;
+    margin-top: 10px;
+}
+
+.footer-border__top {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #b0b0b0;
+}
+
+@media(min-width:800px) {
+    .footer-text {
+        font-size: 0.8rem;
+    }
+    .clock-time {
+        font-size: 0.8rem;
+        padding-left: 30px;
+    }
+}
+
+@media (min-width:500px) and (max-width:800px) {
+    .footer-text {
+        font-size: 0.6rem;
+    }
+    .clock-time {
+        padding-left: 20px;
+    }
+}
