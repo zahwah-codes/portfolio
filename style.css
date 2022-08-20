@@ -95,6 +95,10 @@ svg {
     cursor: pointer;
 }
 
+.nav-links:hover {
+    font-style: italic;
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
