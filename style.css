@@ -231,6 +231,7 @@ svg {
 
 #arrow {
     filter: var(--arrow);
+    width: 17px;
 }
 
 @keyframes jumpInfinite {
@@ -295,7 +296,7 @@ svg {
     }
 
     .last-name {
-        margin-top: -150px;
+        margin-top: -100px;
     }
 
     .first-name {
@@ -311,7 +312,7 @@ svg {
 
 .section-projects {
     margin-left: 60px;
-    height: 60vh;
+    height: 80vh;
 }
 .section-projects-title {
     font-family: 'PP Neue Montreal Book';
@@ -462,7 +463,7 @@ svg {
 }
 
 .project-arrow {
-    width: 18px;
+    width: 10px;
 }
 
 
@@ -540,7 +541,7 @@ svg {
 
 .section-about__content {
     width: 100%;
-    margin-top: 30vh;
+    margin-top: 10vh;
 }
 
 .section-about__content >* {
@@ -575,14 +576,14 @@ svg {
 }
 
 .line-container {
-    font-size: 1rem;
-    line-height: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
 }
 
 .section-about__socials {
     display: block;
     position: relative;
-    top: 50px;
+    top: 100px;
 }
 
 .section-about__paragraph .line-container {
@@ -591,7 +592,7 @@ svg {
 
 .social-link {
     color: var(--secondary-color);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 
 .section-about__socials-link {
@@ -614,7 +615,7 @@ svg {
     width: 10px;
 }
 
-@media(min-width:800px) {
+@media(min-width:1000px) {
     .line-container {
         font-size: 2.5rem;
         line-height: 2.5rem;
@@ -630,12 +631,17 @@ svg {
     .socials-arrow{
         width: 15px;
     }
+
+    .section-about__content {
+        margin-top: 30vh;
+    }
     
 }
 
-@media (min-width:500px) and (max-width:800px) {
+@media (min-width:600px) and (max-width:1000px) {
     .line-container {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
+        margin-top: 5px;
     }
     .section-about__socials {
         display: block;
@@ -643,7 +649,10 @@ svg {
         top: 100px;
     }
     .social-link {
-        font-size: 0.7rem;
+        font-size: 1.2rem;
+    }
+    .section-about__content {
+        margin-top: 30vh;
     }
 }
 
@@ -652,7 +661,7 @@ svg {
 
 .footer-home{
     width: 100%;
-    height: 5vh;
+    height: 6vh;
 }
 
 .footer-list{
